@@ -66,6 +66,26 @@ body {
     background-color: aquamarine;
 }
 
+.right-main {
+    background-image: url("/img/mine.jpg");
+    height: 100%;
+}
+
 .border-lf {
     border-left: 1px solid lightgray;
+}
+
+.message {
+    width: 300px;
+    border-radius: 20px;
+}
+
+.received {
+    background-color: #d5f9ba;
+    align-self: flex-start;
+}
+
+.sent {
+    background-color: white;
+    align-self: flex-end;
 }

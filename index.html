@@ -68,7 +68,7 @@
 
             <!-- sezione destra -->
 
-            <section class="col-8 right p-0">
+            <section class="col-8 right p-0 d-flex justify-content-between flex-column">
                 <div class="profile border-lf d-flex justify-content-between">
                     <div class="user-pic">   
                         <img class="w-50" src="img/avatar_io.jpg">
@@ -80,8 +80,19 @@
                         <i class="m-2 fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div></div>
-                <div></div>
+                <div class="right-main d-flex justify-content-around">
+                   <div class="message sent m-2">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsum, qui exercitationem dolorum sint maiores culpa assumenda incidunt, accusantium, a ut molestias aut magni reprehenderit iste repellat ex deleniti illum?
+                   </div>
+                   <div class="message received m-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nemo rerum maiores et, voluptatum explicabo voluptatibus laborum exercitationem officia hic repellendus molestiae tempore possimus a ab provident, porro dolorem. Iusto?
+                   </div> 
+                </div>
+                <div class="profile d-flex p-2 justify-content-around align-items-center">
+                    <i class="fa-regular fa-face-smile fs-4 mx-3"></i>
+                    <input type="text" id="userInput" class="flex-grow-1" placeholder="scrivi il tuo messaggio">
+                    <i class="fa-solid fa-microphone fs-4 mx-3"></i>
+                </div>
             </section>
         </main>
     </div>
