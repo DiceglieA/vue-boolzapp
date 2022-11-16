@@ -1,0 +1,25 @@
+body {
+    height: 100vh;
+    background: rgb(0,168,132);
+    background: linear-gradient(0deg,  rgb(236, 229, 221) 85% ,  rgb(	18, 140, 126) 10%);
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+}
+
+.main-container {
+    width: 80%;
+    height: 90%;
+}
+
+.left {
+    background-color: aqua;
+}
+
+.right {
+    background-color: aquamarine;
+}
