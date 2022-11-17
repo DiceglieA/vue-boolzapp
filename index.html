@@ -20,8 +20,8 @@
             <section class="col-4 left p-0">
                 <!-- barra profilo utente -->
                 <div class="profile d-flex justify-content-between">
-                    <div class="user-pic">   
-                        <img class="w-50" src="img/avatar_io.jpg">
+                    <div class="user-pic id align-items-center">   
+                        <img class="w-100" src="img/avatar_io.jpg">
                         <span>Sofia</span>
                    </div>
                     <div class="icons d-flex align-items-center">
@@ -50,17 +50,14 @@
                     </div>
                 </div>
                 <!-- lista contatti -->
-                <div class="contacts">
-                    <div>
+                <div v-for="(element,index) in contacts" @click="chatSelect(index)" :class="(index == contact) ? 'selected' : ''" class="contacts id">
+                    <div class="id">
                         <div class="user-pic">   
-                            <img class="w-50" src="img/avatar_io.jpg">
-                            <span>Sofia</span>
+                            <img class="w-100" :src="contacts[index].avatar">
                        </div>
-                    </div>
-                    <div>
-                        <div class="user-pic">   
-                            <img class="w-50" src="img/avatar_io.jpg">
-                            <span>Sofia</span>
+                       <div>
+                        <h6>{{ element.name }}</h6>
+                        <div class="last-message">{{ element.messages[element.messages.length - 1].message}}</div>
                        </div>
                     </div>
                 </div>
@@ -70,9 +67,9 @@
 
             <section class="col-8 right p-0 d-flex justify-content-between flex-column">
                 <div class="profile border-lf d-flex justify-content-between">
-                    <div class="user-pic">   
-                        <img class="w-50" src="img/avatar_io.jpg">
-                        <span>Sofia</span>
+                    <div class="user-pic id">   
+                        <img class="w-100" :src="contacts[contact].avatar">
+                        <span>{{contacts[contact].name}}</span>
                    </div>
                     <div class="icons me-2 d-flex align-items-center">
                         <i class="m-2 fa-solid fa-magnifying-glass"></i>
@@ -80,12 +77,12 @@
                         <i class="m-2 fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div class="right-main d-flex justify-content-around">
+                <div v-for="(elem, index) in contacts[contact].messages" :class="elem.status == 'sent' ? 'sent' : 'received'" class="right-main d-flex justify-content-around">
                    <div class="message sent m-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsum, qui exercitationem dolorum sint maiores culpa assumenda incidunt, accusantium, a ut molestias aut magni reprehenderit iste repellat ex deleniti illum?
+                        {{ elem.message }}
                    </div>
                    <div class="message received m-3">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nemo rerum maiores et, voluptatum explicabo voluptatibus laborum exercitationem officia hic repellendus molestiae tempore possimus a ab provident, porro dolorem. Iusto?
+                        {{ elem.message }}
                    </div> 
                 </div>
                 <div class="profile d-flex p-2 justify-content-around align-items-center">
