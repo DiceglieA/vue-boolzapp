@@ -190,6 +190,7 @@ new Vue ({
         },
         deleteMsg(index) {
             this.contacts[this.contact].messages.splice(index, 1)
+            console.log(index)
         },
         searchId() {
             this.contacts.forEach(contact => {

@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <!-- lista contatti -->
-                <div v-for="(element,index) in contacts" @click="chatSelect(index)" :class="(index == contact) ? 'selected' : ''" class="contacts id">
+                <div v-for="(element,index) in contacts" @click="chatSelect(index)" :class="(index == contact) ? 'selected' : ''" v-if="element.visible" class="contacts id">
                     <div class="id">
                         <div class="user-pic">   
                             <img class="w-100" :src="contacts[index].avatar">
