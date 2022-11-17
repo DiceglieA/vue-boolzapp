@@ -79,6 +79,7 @@ body {
 .right-main {
     background-image: url("/img/mine.jpg");
     height: 100%;
+    width: 100%;
 }
 
 .border-lf {
@@ -86,17 +87,16 @@ body {
 }
 
 .message {
-    width: 300px;
     border-radius: 20px;
 }
 
 .received {
-    background-color: #d5f9ba;
+    background-color: white;
     align-self: flex-start;
 }
 
 .sent {
-    background-color: white;
+    background-color: #d5f9ba;
     align-self: flex-end;
 }
 

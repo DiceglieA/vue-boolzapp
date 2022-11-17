@@ -2,6 +2,7 @@ new Vue ({
     el: '#root',
     data: {
         contact: 0,
+        inputMessage: '',
         contacts: [
             {
             name: 'Michele',
@@ -169,6 +170,18 @@ new Vue ({
     methods: {
         chatSelect(index) {
             this.contact = index;
-        }
+        },
+        sendMsg() {
+            this.contacts[this.contact].messages.push({
+                date: '',
+                message: this.inputMessage,
+                status: 'sent'
+            })
+            this.inputMessage = '';
+        },
+        deleteMsg(index) {
+            this.contacts[this.contact].messages.splice(index, 1)
+        },
     }
+    
 })
