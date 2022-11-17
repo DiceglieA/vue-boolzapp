@@ -178,6 +178,14 @@ new Vue ({
                 status: 'sent'
             })
             this.inputMessage = '';
+
+            setTimeout(()=> {
+                this.contacts[this.contact].messages.push({
+                    date: '',
+                    message: 'va bene',
+                    status: 'received'
+                })
+            }, 1000) 
         },
         deleteMsg(index) {
             this.contacts[this.contact].messages.splice(index, 1)
