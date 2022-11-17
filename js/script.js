@@ -3,6 +3,7 @@ new Vue ({
     data: {
         contact: 0,
         inputMessage: '',
+        research: '',
         contacts: [
             {
             name: 'Michele',
@@ -190,6 +191,14 @@ new Vue ({
         deleteMsg(index) {
             this.contacts[this.contact].messages.splice(index, 1)
         },
+        searchId() {
+            this.contacts.forEach(contact => {
+                if (contact.name.includes(this.research)){
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+            });
+        }
     }
-    
 })
