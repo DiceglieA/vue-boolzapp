@@ -70,10 +70,15 @@ body {
     font-size: 10px;
 }
 
+.overflow {
+    overflow-y: auto;
+}
+
 /* parte destra */
 
 .right {
     background-color: aquamarine;
+    height: 100%;
 }
 
 .right-main {

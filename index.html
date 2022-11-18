@@ -50,16 +50,18 @@
                     </div>
                 </div>
                 <!-- lista contatti -->
-                <div v-for="(element,index) in contacts" @click="chatSelect(index)" :class="(index == contact) ? 'selected' : ''" v-if="element.visible" class="contacts id">
-                    <div class="id">
-                        <div class="user-pic">   
-                            <img class="w-100" :src="contacts[index].avatar">
-                       </div>
-                       <div>
-                        <h6>{{ element.name }}</h6>
-                        <div class="last-message" v-if="element.messages.length != 0">{{ element.messages[element.messages.length - 1].message}}</div>
-                        <div class="last-message" v-else>non ci sono messaggi</div>
-                       </div>
+                <div class="overflow">
+                    <div v-for="(element,index) in contacts" @click="chatSelect(index)" :class="(index == contact) ? 'selected' : ''" v-if="element.visible" class="contacts id">
+                        <div class="id">
+                            <div class="user-pic">   
+                                <img class="w-100" :src="contacts[index].avatar">
+                           </div>
+                           <div>
+                            <h6>{{ element.name }}</h6>
+                            <div class="last-message" v-if="element.messages.length != 0">{{ element.messages[element.messages.length - 1].message}}</div>
+                            <div class="last-message" v-else>non ci sono messaggi</div>
+                           </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -78,7 +80,7 @@
                         <i class="m-2 fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div class="right-main d-flex flex-column">
+                <div class="right-main d-flex flex-column overflow">
                    <div v-for="(elem, index) in contacts[contact].messages" :class="elem.status == 'sent' ? 'sent' : 'received'" class="p-2 m-3 message">
                         {{ elem.message }}
                         <span @click="deleteMsg(index)" class="m-2">x</span>
