@@ -194,7 +194,7 @@ new Vue ({
         },
         searchId() {
             this.contacts.forEach(contact => {
-                if (contact.name.includes(this.research)){
+                if (contact.name.toLowerCase().includes(this.research.toLowerCase())){
                     contact.visible = true;
                 } else {
                     contact.visible = false;

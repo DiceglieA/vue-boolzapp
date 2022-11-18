@@ -57,7 +57,8 @@
                        </div>
                        <div>
                         <h6>{{ element.name }}</h6>
-                        <div class="last-message">{{ element.messages[element.messages.length - 1].message}}</div>
+                        <div class="last-message" v-if="element.messages.length != 0">{{ element.messages[element.messages.length - 1].message}}</div>
+                        <div class="last-message" v-else>non ci sono messaggi</div>
                        </div>
                     </div>
                 </div>
