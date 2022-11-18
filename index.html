@@ -83,14 +83,14 @@
                 <div class="right-main d-flex flex-column overflow">
                    <div v-for="(elem, index) in contacts[contact].messages" :class="elem.status == 'sent' ? 'sent' : 'received'" class="p-2 m-3 message">
                         {{ elem.message }}
-                        <span @click="deleteMsg(index)" class="m-2">x</span>
+                        <span @click="deleteMsg(index)" class="m-2"><i class="fa-solid fa-chevron-down"></i></span>
                         <!-- fare il toggleitem  -->
                    </div>
                 </div>
                 <div class="profile d-flex p-2 justify-content-around align-items-center">
                     <i class="fa-regular fa-face-smile fs-4 mx-3"></i>
                     <input v-model="inputMessage" @keyup.enter="sendMsg" type="text" id="userInput" class="flex-grow-1" placeholder="scrivi il tuo messaggio">
-                    <i class="fa-solid fa-microphone fs-4 mx-3"></i>
+                    <i :class="(inputMessage !== '') ? 'fa-solid fa-paper-plane fs-4 mx-3' : 'fa-solid fa-microphone fs-4 mx-3'" @click="sendMsg"></i>
                 </div>
             </section>
         </main>
