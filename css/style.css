@@ -93,6 +93,15 @@ body {
 
 .message {
     border-radius: 20px;
+    position: relative;
+}
+
+.sent-time {
+    position: absolute;
+    right: 8px;
+    bottom: 1px;
+    color: lightgray;
+    font-size: 6px;
 }
 
 .received {

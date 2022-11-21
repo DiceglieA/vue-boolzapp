@@ -174,7 +174,7 @@ new Vue ({
         },
         sendMsg() {
             this.contacts[this.contact].messages.push({
-                date: '',
+                date: this.nowFunct(),
                 message: this.inputMessage,
                 status: 'sent'
             })
@@ -182,11 +182,14 @@ new Vue ({
 
             setTimeout(()=> {
                 this.contacts[this.contact].messages.push({
-                    date: '',
+                    date: this.nowFunct(),
                     message: 'va bene',
                     status: 'received'
                 })
             }, 1000) 
+        },
+        nowFunct() {
+            return luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'); 
         },
         deleteMsg(index) {
             this.contacts[this.contact].messages.splice(index, 1)
@@ -203,3 +206,6 @@ new Vue ({
         }
     }
 })
+
+
+//indicare alla x nella searchbar funzione che al click mi ridà una stringa vuota
